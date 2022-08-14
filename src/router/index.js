@@ -1,19 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import { Home, Cocktail, Contact, NotFound, PublicLayout} from '@/views/public'
+import * as Public from '@/views/public'
 
-import { AdminLayout, Dashboard, UserIndex, UserEdit, UserAdd, CocktailIndex, CocktailEdit } from '@/views/admin'
+import * as Admin from '@/views/admin'
 
 const routes = [
 
   {
     path: '/',
     name: 'public',
-    component: PublicLayout,
+    component: Public.PublicLayout,
     children: [
-      { path: '/', name: 'home', component: Home},
-      { path: '/cocktails', name: 'Cocktails', component: Cocktail },
-      { path: '/contact', name: 'Contact', component: Contact },
+      { path: '/', name: 'home', component: Public.Home},
+      { path: '/cocktails', name: 'Cocktails', component: Public.Cocktail },
+      { path: '/contact', name: 'Contact', component: Public.Contact },
     ]
 
   },
@@ -21,22 +21,22 @@ const routes = [
   {
     path: '/admin',
     name: 'admin',
-    component: AdminLayout,
+    component: Admin.AdminLayout,
     children: [
-      { path: 'dashboard', name: 'dashboard', component: Dashboard },
+      { path: 'dashboard', name: 'dashboard', component: Admin.Dashboard },
 
-      { path: 'users/index', name: 'userindex', component: UserIndex },
-      { path: 'user/edit/:id', name: 'useredit', component: UserEdit },
-      { path: 'user/add', name: 'useradd', component: UserAdd },
+      { path: 'users/index', name: 'userindex', component: Admin.UserIndex },
+      { path: 'user/edit/:id', name: 'useredit', component: Admin.UserEdit },
+      { path: 'user/add', name: 'useradd', component: Admin.UserAdd },
 
-      { path: 'cocktails/index', name: 'cocktailindex', component: CocktailIndex },
-      { path: 'cocktail/edit', name: 'cocktailedit', component: CocktailEdit },
+      { path: 'cocktails/index', name: 'cocktailindex', component: Admin.CocktailIndex },
+      { path: 'cocktail/edit', name: 'cocktailedit', component: Admin.CocktailEdit },
     ]
   },
 
   {
     path: '/:pathMatch(.*)*',
-    component: NotFound
+    component: Public.NotFound
   }
   // {
   //   path: '/about',
