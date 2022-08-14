@@ -6,6 +6,16 @@ import Contact from '@/views/public/Contact.vue'
 import NotFound from '@/views/public/NotFound.vue'
 import PublicLayout from '@/views/public/Layout.vue'
 
+import AdminLayout from '@/views/admin/Layout.vue'
+import Dashboard from '@/views/admin/Dashboard.vue'
+
+import UserIndex from '@/views/admin/users/UserIndex.vue'
+import UserEdit from '@/views/admin/users/UserEdit.vue'
+import UserAdd from '@/views/admin/users/UserAdd.vue'
+
+import CocktailIndex from '@/views/admin/cocktail/CocktailIndex.vue'
+import CocktailEdit from '@/views/admin/cocktail/CocktailEdit.vue'
+
 const routes = [
 
   {
@@ -18,6 +28,22 @@ const routes = [
       { path: '/contact', name: 'Contact', component: Contact },
     ]
 
+  },
+
+  {
+    path: '/admin',
+    name: 'admin',
+    component: AdminLayout,
+    children: [
+      { path: 'dashboard', name: 'dashboard', component: Dashboard },
+
+      { path: 'users/index', name: 'userindex', component: UserIndex },
+      { path: 'user/edit/:id', name: 'useredit', component: UserEdit },
+      { path: 'user/add', name: 'useradd', component: UserAdd },
+      
+      { path: 'cocktails/index', name: 'cocktailindex', component: CocktailIndex },
+      { path: 'cocktail/edit', name: 'cocktailedit', component: CocktailEdit },
+    ]
   },
 
   {
