@@ -10,6 +10,9 @@
         <li>
           <router-link to="/admin/user/edit/125">editer user 125</router-link>
         </li>
+        <li>
+          <router-link to="/login">login</router-link>
+        </li>
     </ul>
   </div>
 </template>

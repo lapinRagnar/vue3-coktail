@@ -4,6 +4,8 @@ import * as Public from '@/views/public'
 
 import * as Admin from '@/views/admin'
 
+import Login from '@/views/auth/Login.vue'
+
 const routes = [
 
   {
@@ -32,6 +34,12 @@ const routes = [
       { path: 'cocktails/index', name: 'cocktailindex', component: Admin.CocktailIndex },
       { path: 'cocktail/edit', name: 'cocktailedit', component: Admin.CocktailEdit },
     ]
+  },
+
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
   },
 
   {
