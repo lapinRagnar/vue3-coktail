@@ -1,20 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Home from '@/views/public/Home.vue'
-import Cocktail from '@/views/public/Cocktail.vue'
-import Contact from '@/views/public/Contact.vue'
-import NotFound from '@/views/public/NotFound.vue'
-import PublicLayout from '@/views/public/Layout.vue'
+import { Home, Cocktail, Contact, NotFound, PublicLayout} from '@/views/public'
 
-import AdminLayout from '@/views/admin/Layout.vue'
-import Dashboard from '@/views/admin/Dashboard.vue'
-
-import UserIndex from '@/views/admin/users/UserIndex.vue'
-import UserEdit from '@/views/admin/users/UserEdit.vue'
-import UserAdd from '@/views/admin/users/UserAdd.vue'
-
-import CocktailIndex from '@/views/admin/cocktail/CocktailIndex.vue'
-import CocktailEdit from '@/views/admin/cocktail/CocktailEdit.vue'
+import { AdminLayout, Dashboard, UserIndex, UserEdit, UserAdd, CocktailIndex, CocktailEdit } from '@/views/admin'
 
 const routes = [
 
@@ -40,7 +28,7 @@ const routes = [
       { path: 'users/index', name: 'userindex', component: UserIndex },
       { path: 'user/edit/:id', name: 'useredit', component: UserEdit },
       { path: 'user/add', name: 'useradd', component: UserAdd },
-      
+
       { path: 'cocktails/index', name: 'cocktailindex', component: CocktailIndex },
       { path: 'cocktail/edit', name: 'cocktailedit', component: CocktailEdit },
     ]
