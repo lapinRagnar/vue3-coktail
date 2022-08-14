@@ -6,6 +6,11 @@ import * as Admin from '@/views/admin'
 
 import Login from '@/views/auth/Login.vue'
 
+import { authGuard } from '@/_helpers/auth-guard'
+
+
+localStorage.setItem('token', 'monsupertoken')
+
 const routes = [
 
   {
@@ -39,7 +44,8 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: Login,
+    beforeEnter: authGuard
   },
 
   {
