@@ -26,7 +26,7 @@ const routes = [
       { path: 'dashboard', name: 'dashboard', component: Admin.Dashboard },
 
       { path: 'users/index', name: 'userindex', component: Admin.UserIndex },
-      { path: 'user/edit/:id', name: 'useredit', component: Admin.UserEdit },
+      { path: 'user/edit/:id', name: 'useredit', component: Admin.UserEdit, props: true },
       { path: 'user/add', name: 'useradd', component: Admin.UserAdd },
 
       { path: 'cocktails/index', name: 'cocktailindex', component: Admin.CocktailIndex },

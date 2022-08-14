@@ -1,7 +1,7 @@
 <template>
   <div>
     user edit
-    <p>tu as l'id {{ test }} </p>
+    <p>tu as l'id {{ id }} </p>
     
   </div>
 </template>
@@ -9,15 +9,9 @@
 <script>
 export default {
   name: 'UserEdit',
-  data() {
-    return {
-      test: ''
-    }
-  },
-  mounted(){
-    console.log(this.$route.params.id);
-    this.test = this.$route.params.id
-  }
+  props: ['id'],
+
+
 }
 </script>
 
