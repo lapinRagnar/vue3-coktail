@@ -1,5 +1,5 @@
 <template>
-  <div class="admin">
+  <div class="dashboard">
     Dashboard
   </div>
 </template>
@@ -10,6 +10,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  .dashbord {
+    width: 100%;
+    height: 100%;
+  }
 </style>

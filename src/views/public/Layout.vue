@@ -1,6 +1,7 @@
 <template>
   <div>
     <PublicNav />
+    layout public marche
     <router-view />
   </div>
 </template>
