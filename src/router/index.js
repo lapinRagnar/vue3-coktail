@@ -9,7 +9,6 @@ import Login from '@/views/auth/Login.vue'
 import { authGuard } from '@/_helpers/auth-guard'
 
 
-localStorage.setItem('token', 'monsupertoken')
 
 const routes = [
 
@@ -45,7 +44,6 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login,
-    beforeEnter: authGuard
   },
 
   {
@@ -65,6 +63,16 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  // console.log(to, from)
+  console.log(to.matched[0].name)
+  if (to.matched[0].name == 'admin') {
+    console.log("pas de token, pas admin");
+    authGuard()
+  }
+  next()
 })
 
 export default router
