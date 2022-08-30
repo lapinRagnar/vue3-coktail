@@ -5,6 +5,7 @@ import * as Public from '@/views/public'
 import * as Admin from '@/views/admin'
 
 import Login from '@/views/auth/Login.vue'
+import { LogoutComponent } from '@/views/auth/Logout'
 
 import { authGuard } from '@/_helpers/auth-guard'
 
@@ -44,6 +45,12 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login,
+  },
+
+  {
+    path: '/logout',
+    name: 'logout',
+    component: LogoutComponent,
   },
 
   {

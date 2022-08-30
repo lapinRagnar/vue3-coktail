@@ -13,6 +13,9 @@
         <li>
           <router-link to="/login">login</router-link>
         </li>
+        <li>
+          <router-link to="/logout">logout</router-link>
+        </li>
     </ul>
   </div>
 </template>

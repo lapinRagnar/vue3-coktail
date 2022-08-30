@@ -6,9 +6,10 @@ let login = (credentials) => {
   return Axios({
     method: 'post',
     url: '/auth/login',
-    data: {
-      email: 'belou@gmail.com',
-      password: 'lapinragnar'
+    data: credentials,
+    headers: {
+      "Content-Type": "application/json",
+
     }
   })
 }
