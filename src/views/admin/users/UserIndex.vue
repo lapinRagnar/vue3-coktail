@@ -15,7 +15,7 @@
       <tbody>
         <tr v-for="(user, index) in users" :key="user.id">
           <td>{{user.id}}</td>
-          <td>{{user.nom}}</td>
+          <td class="edit" @click="goEdit(user.id)">{{user.nom}}</td>
           <td>{{user.prenom}}</td>
           <td>{{user.email}}</td>
           <td>{{dateFormat[index]}}</td>
@@ -44,6 +44,13 @@ export default {
      })
      .then(err => console.log(err))
   },
+  methods: {
+    goEdit(uid){
+      console.log(uid)
+      // this.$router.push('/admin/user/edit/' + id)
+      this.$router.push({name: 'uEdit', params: {id: uid}})
+    }
+  },
   computed: {
     comptage(){
       return (this.users.length == 0) ? 'aucun utilisateur' : `il y en a ${this.users.length} `
@@ -56,5 +63,11 @@ export default {
 </script>
 
 <style>
-
+  .edit {
+    cursor: pointer;
+  }
+  .edit:hover{
+    font-weight: bold;
+    color: brown;
+  }
 </style>
