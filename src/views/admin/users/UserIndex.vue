@@ -17,7 +17,7 @@
           <td>{{user.nom}}</td>
           <td>{{user.prenom}}</td>
           <td>{{user.email}}</td>
-          <td>{{user.createdAt}}</td>
+          <td>{{user.createdAt.split('T')[0].split('-').reverse().join('/')}}</td>
         </tr>
       </tbody>
     </table>
