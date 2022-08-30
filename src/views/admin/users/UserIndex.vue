@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Liste des utilisateurs</h1>
+    <h1>Liste des utilisateurs </h1>
+    <p>total - ({{comptage}})</p>
     <table>
       <thead>
         <tr>
@@ -12,12 +13,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in users" :key="user.id">
+        <tr v-for="(user, index) in users" :key="user.id">
           <td>{{user.id}}</td>
           <td>{{user.nom}}</td>
           <td>{{user.prenom}}</td>
           <td>{{user.email}}</td>
-          <td>{{user.createdAt.split('T')[0].split('-').reverse().join('/')}}</td>
+          <td>{{dateFormat[index]}}</td>
         </tr>
       </tbody>
     </table>
@@ -42,6 +43,14 @@ export default {
       this.users = res.data.data
      })
      .then(err => console.log(err))
+  },
+  computed: {
+    comptage(){
+      return (this.users.length == 0) ? 'aucun utilisateur' : `il y en a ${this.users.length} `
+    },
+    dateFormat(){
+      return this.users.map(u => u.createdAt.split('T')[0].split('-').reverse().join('/'))
+    }
   }
 }
 </script>
