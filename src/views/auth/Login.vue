@@ -27,6 +27,10 @@
 </template>
 
 <script>
+
+import { accountService } from '@/_services'
+import axios from 'axios'
+
 export default {
   name: "Login",
   data() {
@@ -37,32 +41,35 @@ export default {
       },
     };
   },
-  methods: {
-    login() {
-      // console.log('la fonction login marche')
-      // console.log(this.user)
-      // fetch('http://localhost:8888/auth/login')
-      //   .then(res => res.json())
-      //   .then(data => console.log(data))
-      //   .then(err => console.log(err))
+  mounted() {
+    console.log('je suis dans login')
+    // axios({
+    //   method: 'post',
+    //   url: 'http://localhost:8989/auth/login',
+    //   data: {
+    //     email: 'lapinragnar@gmail.com',
+    //     password: 'lapinragnar'
+    //   }
+    // })
+    //   .then( res => console.log(res))
+    //   .catch( err => console.log(err))
 
-      fetch("https://dummyjson.com/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: "kminchelle",
-          password: "0lelplR",
-          // expiresInMins: 60, // optional
-        }),
-      })
-        .then((res) => res.json())
-        .then(data => {
-          console.log(data)
-          localStorage.setItem('token', data.token)
+  },
+  methods: {
+
+    login() {
+
+      accountService.login(this.user)
+        .then(res => {
+          console.log(res)
+          console.log(res.data)
+          accountService.saveToken(res.data.access_token)
           this.$router.push('/admin/dashboard')
-        })
-        .then(err => console.log(err))
+        }) 
+        .catch(err => console.log(err))
+
     },
+
   },
 };
 </script>
