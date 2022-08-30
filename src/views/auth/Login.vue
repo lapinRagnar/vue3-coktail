@@ -3,7 +3,7 @@
     <h1>connexion</h1>
     <form @submit.prevent="login">
       <div class="formGroup">
-        <input type="text" placeholder="nom utilisateur" v-model="user.login" />
+        <input type="text" placeholder="nom utilisateur" v-model="user.email" />
       </div>
       <div class="formGroup">
         <input
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       user: {
-        login: "",
+        email: "",
         password: "",
       },
     };

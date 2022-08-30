@@ -32,7 +32,7 @@ const routes = [
     children: [
       { path: 'dashboard', name: 'dashboard', component: Admin.Dashboard },
 
-      { path: 'users/index', name: 'userindex', component: Admin.UserIndex },
+      { path: 'users/index', name: 'uList', component: Admin.UserIndex },
       { path: 'user/edit/:id(\\d+)', name: 'uEdit', component: Admin.UserEdit, props: true },
       { path: 'user/add', name: 'useradd', component: Admin.UserAdd },
 

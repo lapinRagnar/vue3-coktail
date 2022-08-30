@@ -29,6 +29,7 @@
 <script>
 
   import { userService } from '@/_services'
+  
 export default {
   name: 'UserIndex',
   data() {
