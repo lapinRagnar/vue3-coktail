@@ -2,6 +2,8 @@
   <div class="content">
     <h1>editer - ajouter cocktail</h1>
     
+    <p>l'id du cocktail : {{ id }}</p>
+
     <form @submit.prevent="ajout">    
       
       <!-- <p v-if="errors.length">
@@ -40,9 +42,11 @@
 <script>
 
   import { cocktailService } from '@/_services'
+  import { watch } from 'vue'
 
 export default {
   name: 'CocktailEdit',
+  props: ['id'],
   data(){
     return {
       cocktail: {
@@ -53,6 +57,22 @@ export default {
       }
     }
   },
+  setup(props){
+    console.log('dans setup', props)
+
+    watch(props, (value, old) => {
+      console.log('dans le watch', value, old)
+    })
+  },
+  mounted(){
+    console.log("dans le mounted",this.id)
+    if(this.id){
+      console.log('----edition-----')
+    } else {
+      console.log('----ajout-----')
+    }
+  }
+  ,
   methods: {
     ajout(){
       console.log(this.cocktail)
