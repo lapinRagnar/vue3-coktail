@@ -22,8 +22,11 @@ export default {
     components: { PublicNav },
     data(){
       return {
-        aff: this.$store.state.maVariable
+        aff: 'ma variable'
       }
+    },
+    mounted(){
+      this.aff = this.$store.getters.getMavariable
     }
 
 }

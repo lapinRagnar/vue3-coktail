@@ -5,6 +5,9 @@ export default createStore({
     maVariable: 'bonjour tout le monde du state de vuex'
   },
   getters: {
+    getMavariable(state){
+      return state.maVariable
+    }
   },
   mutations: {
   },
