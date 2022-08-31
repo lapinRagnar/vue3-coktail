@@ -14,7 +14,8 @@
           <router-link to="/login">login</router-link>
         </li>
         <li>
-          <router-link to="/logout">logout</router-link>
+          <!-- <router-link to="/logout">logout</router-link> -->
+          <a @click="logout()">Logout</a>
         </li>
 
         <li>cocktail</li>
@@ -29,13 +30,22 @@
 </template>
 
 <script>
+
+import { accountService} from '@/_services'
+
 export default {
-  name: 'AdminNav'
+  name: 'AdminNav',
+  methods: {
+    logout(){
+      accountService.logout()
+      this.$router.push('/')
+    }
+  }
 
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
   .groupe {
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

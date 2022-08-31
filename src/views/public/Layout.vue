@@ -4,6 +4,7 @@
     <div class="la-page">
       <div class="haut">
         Bienvenu à tous!
+        <p>{{aff}}</p>
       </div>
       <div class="bas">
         <router-view />
@@ -18,10 +19,13 @@ import PublicNav from '@/components/PublicNav.vue';
 
 export default {
     name: "PublicLayout",
-    component: {
-        PublicNav
-    },
-    components: { PublicNav }
+    components: { PublicNav },
+    data(){
+      return {
+        aff: this.$store.state.maVariable
+      }
+    }
+
 }
 </script>
 
