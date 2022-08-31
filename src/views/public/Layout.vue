@@ -8,6 +8,7 @@
         <p>mon nom est : {{getUsers}}</p>
         <p>user avec parametre : {{getUserAvecParametre(1)}}</p>
         <button @click="change">changer ragnar</button>
+        <button @click="monAction">mon action</button>
       </div>
       <div class="bas">
         <router-view />
@@ -34,6 +35,9 @@ export default {
       change(){
         // this.$store.commit('changerUserRagnar', {name: 'kary'})
         this.changerUserRagnar({name: 'kary'})
+      },
+      monAction(){
+        this.$store.dispatch('modify')
       } 
     }
 

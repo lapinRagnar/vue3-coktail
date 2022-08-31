@@ -26,6 +26,10 @@ export default createStore({
     }
   },
   actions: {
+    modify(context){
+      console.log(context)
+      context.state.users[0].name = 'poloche '
+    }
   },
   modules: {
   }
