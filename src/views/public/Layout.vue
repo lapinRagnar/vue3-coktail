@@ -20,18 +20,21 @@
 
 import PublicNav from '@/components/PublicNav.vue';
 
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
     name: "PublicLayout",
     components: { PublicNav },
     computed: {
-      ...mapGetters(['getMavariable', 'getUsers', 'getUserAvecParametre'])
+      ...mapGetters(['getMavariable', 'getUsers', 'getUserAvecParametre']),
+      
     },
     methods: {
+      ...mapMutations(['changerUserRagnar']),
       change(){
-        this.$store.commit('changerUserRagnar', {name: 'kary'})
-      }
+        // this.$store.commit('changerUserRagnar', {name: 'kary'})
+        this.changerUserRagnar({name: 'kary'})
+      } 
     }
 
 }
