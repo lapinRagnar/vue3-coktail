@@ -30,7 +30,7 @@ export default {
     },
     methods: {
       change(){
-        this.$store.commit('changerUserRagnar')
+        this.$store.commit('changerUserRagnar', 'piso b')
       }
     }
 
