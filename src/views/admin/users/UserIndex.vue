@@ -3,8 +3,9 @@
     <h1 class="titre">Liste des utilisateurs </h1>
     <p>total - ({{comptage}})</p>
     <table class="tableau">
-      <thead>
+      <thead class="entete">
         <tr>
+          <th></th>
           <th>id</th>
           <th>nom</th>
           <th>prenom</th>
@@ -12,8 +13,9 @@
           <th>date de création</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="corp">
         <tr v-for="(user, index) in users" :key="user.id">
+          <td><span class="del_btn" @click="del(index)">x</span></td>
           <td>{{user.id}}</td>
           <td class="edit" @click="goEdit(user.id)">{{user.nom}}</td>
           <td>{{user.prenom}}</td>
@@ -50,6 +52,17 @@ export default {
       console.log(uid)
       // this.$router.push('/admin/user/edit/' + id)
       this.$router.push({name: 'uEdit', params: {id: uid}})
+    },
+    del(index){
+      console.log(index)
+
+      userService.delUser(this.users[index].id)
+        .then(res => {
+          console.log(res)
+          this.users.splice(index, 1)
+        })
+        .catch(err => console.log(err))
+
     }
   },
   computed: {
@@ -67,6 +80,8 @@ export default {
 
   .content{
 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
     .titre {
       font-size: 30px;
       border-bottom: 1px solid red;
@@ -75,7 +90,41 @@ export default {
     }
 
     .tableau{
-      
+
+      margin-top: 50px;
+
+      width: 100%;
+      .del_btn{
+        color: darkred;
+        cursor: pointer;
+      }
+
+      .entete {
+        font-size: 20px;
+        text-align: left;
+        border-bottom: 1px dashed darkmagenta;
+        height: 40px;
+        
+        tr{
+          
+        }
+      }
+
+      .corp {
+        margin: 20px;
+        color: rgb(48, 29, 110);
+        font-size: 18px;
+        height: 100%;
+        width: 100%;
+        
+        tr{
+          padding-top: 30px;
+
+          td{
+            padding-top: 15px;
+          }
+        }
+      }
     }
 
     .edit {

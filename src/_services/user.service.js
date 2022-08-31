@@ -26,10 +26,19 @@ let createUser = (user) => {
   })
 }
 
+let delUser = (uid) => {
+  return Axios({
+    method: 'delete',
+    url: `/users/${uid}`,
+  })
+
+}
+
 
 export const userService = {
   getAllUsers,
   getUser,
   updateUser,
-  createUser
+  createUser,
+  delUser
 }
