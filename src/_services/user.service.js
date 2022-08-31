@@ -13,12 +13,13 @@ let updateUser = (user) => {
   // return Axios.patch('/users/' + user.id)
   return Axios({
     method: 'patch',
-    url: `/users/+${user.id}`,
+    url: `/users/${user.id}`,
     data: user
   })
 } 
 
 let createUser = (user) => {
+  console.log('je suis dans userservice createUser', user)
   return Axios({
     method: 'put',
     url: `/users`,

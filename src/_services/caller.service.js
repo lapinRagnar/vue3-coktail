@@ -14,8 +14,10 @@ const Axios = axios.create({
 Axios.interceptors.request.use(request => {
   
   console.log('je suis dans caller.service', request)
+  console.log('je suis connecté ? : ', accountService.isLogged())
 
   if (accountService.isLogged()) {
+    console.log('je suis dans le if')
     request.headers.Authorization = `Bearer ${accountService.getToken()}`
   }
 
@@ -29,7 +31,7 @@ Axios.interceptors.response.use(response => {
 
   return response
 }, error => {
-  console.log(error.response.status)
+  console.log('je suis dans axios interceptors response',error.response.status)
   if (error.response.status == 401) {
     accountService.logout()
     router.push('/login')

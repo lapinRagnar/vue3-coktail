@@ -30,6 +30,7 @@
       <div class="formGroup">
         <input type="email" placeholder="email" v-model="user.email">
       </div>
+    
 
       <div class="formGroup">
         <input type="password" placeholder="mot de passe" v-model="user.password">
@@ -51,6 +52,7 @@
 <script>
 
   import { userService } from '@/_services'
+  import router from '@/router'
 
 export default {
   name: 'UserAdd',
@@ -61,7 +63,7 @@ export default {
         prenom: '',
         pseudo: '',
         email: '',
-        password: '',
+        password: ''
       },
       confirme: '',
       errors: []
@@ -70,6 +72,7 @@ export default {
   methods: {
     ajout(){
 
+      console.log('dans ajout user')
       console.log(this.user, this.confirme)
 
       this.errors = []
@@ -82,14 +85,20 @@ export default {
         this.errors.push('Password too short')
       }
 
-      if (this.user.password.length == 0) {
+      console.log('taille erreurs', this.errors.length)
+
+      if (this.errors.length == 0) {
 
         userService.createUser(this.user)
           .then(res => {
+            console.log('je suis la - adduser')
             console.log(res)
-            this.$router.push({name: 'uList'})
+            router.push({name: 'uList'})
           })
-          .catch(err => console.log(err))
+          .catch(err => {
+            console.log('misy erreurs oooh, je suis dans le catch!')
+            console.log(err)
+          })
       
       }
 
