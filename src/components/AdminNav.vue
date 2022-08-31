@@ -2,6 +2,7 @@
   <div class="groupe">
     <h3 class="titre">Admin dashbord</h3>
     <ul>
+        <li>utilisateur</li>
         <li>
           <router-link to="/admin/users/index">liste des users</router-link>
         </li>
@@ -14,6 +15,14 @@
         </li>
         <li>
           <router-link to="/logout">logout</router-link>
+        </li>
+
+        <li>cocktail</li>
+        <li>
+          <router-link to="/admin/cocktails/index">list cocktail</router-link>
+        </li>
+        <li>
+          <router-link to="/admin/cocktail/edit">ajouter cocktail</router-link>
         </li>
     </ul>
   </div>

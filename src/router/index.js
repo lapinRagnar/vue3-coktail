@@ -36,8 +36,8 @@ const routes = [
       { path: 'user/edit/:id(\\d+)', name: 'uEdit', component: Admin.UserEdit, props: true },
       { path: 'user/add', name: 'useradd', component: Admin.UserAdd },
 
-      { path: 'cocktails/index', name: 'cocktailindex', component: Admin.CocktailIndex },
-      { path: 'cocktail/edit', name: 'cocktailedit', component: Admin.CocktailEdit },
+      { path: 'cocktails/index', name: 'cList', component: Admin.CocktailIndex },
+      { path: 'cocktail/edit', name: 'cEdit', component: Admin.CocktailEdit },
     ]
   },
 
