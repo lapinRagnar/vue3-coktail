@@ -5,6 +5,9 @@
       <div class="haut">
         Bienvenu à tous!
         <p>{{getMavariable}}</p>
+        <p>mon nom est : {{getUsers}}</p>
+        <p>user avec parametre : {{getUserAvecParametre(1)}}</p>
+        <button @click="change">changer ragnar</button>
       </div>
       <div class="bas">
         <router-view />
@@ -23,7 +26,12 @@ export default {
     name: "PublicLayout",
     components: { PublicNav },
     computed: {
-      ...mapGetters(['getMavariable'])
+      ...mapGetters(['getMavariable', 'getUsers', 'getUserAvecParametre'])
+    },
+    methods: {
+      change(){
+        this.$store.commit('changerUserRagnar')
+      }
     }
 
 }
