@@ -5,7 +5,7 @@
       </div>
     </div>
     <div>      
-      <p>{{ aff }} </p>
+      <p>{{ getMavariable }} </p>
       <div @click="logout">logout</div>
     </div>
 </template>
@@ -13,19 +13,18 @@
 <script>
 
   import { accountService } from '@/_services';
+  import { mapGetters } from 'vuex';
 
 export default {
   name: 'AdminHeader',
-  data(){
-    return {
-      aff: this.$store.state.maVariable
-    }
-  },
   methods: {
     logout(){
       accountService.logout()
       this.$router.push('/')
     }
+  },
+  computed: {
+    ...mapGetters(['getMavariable'])
   }
 }
 </script>

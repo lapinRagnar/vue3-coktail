@@ -4,7 +4,7 @@
     <div class="la-page">
       <div class="haut">
         Bienvenu à tous!
-        <p>{{aff}}</p>
+        <p>{{getMavariable}}</p>
       </div>
       <div class="bas">
         <router-view />
@@ -17,16 +17,13 @@
 
 import PublicNav from '@/components/PublicNav.vue';
 
+import { mapGetters } from 'vuex';
+
 export default {
     name: "PublicLayout",
     components: { PublicNav },
-    data(){
-      return {
-        aff: 'ma variable'
-      }
-    },
-    mounted(){
-      this.aff = this.$store.getters.getMavariable
+    computed: {
+      ...mapGetters(['getMavariable'])
     }
 
 }
