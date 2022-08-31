@@ -1,6 +1,6 @@
 <template>
   <div class="formulaire">
-    <h1>connexion</h1>
+    <h1 class="titre">connexion</h1>
     <form @submit.prevent="login">
       <div class="formGroup">
         <input type="text" placeholder="nom utilisateur" v-model="user.email" />
@@ -18,9 +18,8 @@
     </form>
 
     <div>
-      tu as tapé
       <p>
-        {{ user }}
+        tu as tapé - {{ user }}
       </p>
     </div>
   </div>
@@ -43,17 +42,6 @@ export default {
   },
   mounted() {
     console.log('je suis dans login')
-    // axios({
-    //   method: 'post',
-    //   url: 'http://localhost:8989/auth/login',
-    //   data: {
-    //     email: 'lapinragnar@gmail.com',
-    //     password: 'lapinragnar'
-    //   }
-    // })
-    //   .then( res => console.log(res))
-    //   .catch( err => console.log(err))
-
   },
   methods: {
 
@@ -74,17 +62,19 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.formulaire {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+<style lang="scss" scoped>
+  
+  .formulaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  form {
-    .formGroup {
-      padding-bottom: 20px;
+    .titre{
+      font-size: 50px;
+      margin-top: 150px;
+      margin-bottom: 50px;
     }
   }
-}
+
 </style>

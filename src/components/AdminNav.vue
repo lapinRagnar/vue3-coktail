@@ -1,5 +1,6 @@
 <template>
-  <div>Admin nav marche
+  <div class="groupe">
+    <h3 class="titre">Admin dashbord</h3>
     <ul>
         <li>
           <router-link to="/admin/users/index">liste des users</router-link>
@@ -25,6 +26,34 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+  .groupe {
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    .titre{
+      font-size: 20px;
+      text-transform: uppercase;
+      border-bottom: 12px solid slategray;
+      padding-left: 20px;
+      padding-bottom: 10px;
+    }
+
+    ul {
+      padding: 20px 20px;
+      li {
+        padding: 20px;
+        a{
+          color: white;
+          font-size: 20px;
+
+          &:hover {
+            background-color: darkolivegreen;
+          }
+        }
+      }
+    }
+  }
+
 
 </style>

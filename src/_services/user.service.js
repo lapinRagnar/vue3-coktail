@@ -18,9 +18,18 @@ let updateUser = (user) => {
   })
 } 
 
+let createUser = (user) => {
+  return Axios({
+    method: 'put',
+    url: `/users`,
+    data: user
+  })
+}
+
 
 export const userService = {
   getAllUsers,
   getUser,
   updateUser,
+  createUser
 }

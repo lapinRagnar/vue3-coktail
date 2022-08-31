@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="conteneur">
     <router-link to="/">accueil</router-link> |
     <router-link to="/cocktails">cocktails</router-link> |
     <router-link to="/contact">contact</router-link> |
@@ -13,6 +13,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  .conteneur {
+    width: 100%;
 
+    a{
+      font-size: 30px;
+      color: white;
+      text-decoration: none;
+    }
+  }
 </style>

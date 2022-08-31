@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <div>
-        admin header marche
+  <div class="adminHeader">
+    <div class="titre">
+        Bienvenue, admin header! 
     </div>
   </div>
 </template>
@@ -12,11 +12,21 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
 
-  .ad_head {
-    border-bottom: 1px solid orangered;
+  .adminHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    height: 100px;
+
+    .titre {
+      font-size: 30px;
+      text-transform: uppercase;
+      letter-spacing: 20px;
+      font-weight: 900;
+    }
   }
 
 

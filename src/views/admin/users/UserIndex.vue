@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h1>Liste des utilisateurs </h1>
+  <div class="content">
+    <h1 class="titre">Liste des utilisateurs </h1>
     <p>total - ({{comptage}})</p>
-    <table>
+    <table class="tableau">
       <thead>
         <tr>
           <th>id</th>
@@ -63,12 +63,31 @@ export default {
 }
 </script>
 
-<style>
-  .edit {
-    cursor: pointer;
+<style scoped lang="scss">
+
+  .content{
+
+    .titre {
+      font-size: 30px;
+      border-bottom: 1px solid red;
+      width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .tableau{
+      
+    }
+
+    .edit {
+      cursor: pointer;
+    }
+    .edit:hover{
+      font-weight: bold;
+      color: brown;
+    }
+
+
   }
-  .edit:hover{
-    font-weight: bold;
-    color: brown;
-  }
+
+
 </style>
