@@ -21,7 +21,7 @@
 
 import PublicNav from '@/components/PublicNav.vue';
 
-import { mapGetters, mapMutations } from 'vuex';
+import { mapActions, mapGetters, mapMutations } from 'vuex';
 
 export default {
     name: "PublicLayout",
@@ -32,12 +32,14 @@ export default {
     },
     methods: {
       ...mapMutations(['changerUserRagnar']),
+      ...mapActions(['modify']),
       change(){
         // this.$store.commit('changerUserRagnar', {name: 'kary'})
         this.changerUserRagnar({name: 'kary'})
       },
       monAction(){
-        this.$store.dispatch('modify')
+        // this.$store.dispatch('modify')
+        this.modify()
       } 
     }
 
