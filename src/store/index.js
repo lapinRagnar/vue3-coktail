@@ -26,9 +26,9 @@ export default createStore({
     }
   },
   actions: {
-    modify(context){
+    modify(context, payload){
       console.log(context)
-      context.commit('changerUserRagnar', {name: 'commit par action'})
+      context.commit('changerUserRagnar', {name: payload.name})
     }
   },
   modules: {

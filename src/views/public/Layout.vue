@@ -39,7 +39,7 @@ export default {
       },
       monAction(){
         // this.$store.dispatch('modify')
-        this.modify()
+        this.modify({name: 'on envoie un data du layout'})
       } 
     }
 
