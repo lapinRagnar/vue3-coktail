@@ -23,6 +23,7 @@ export default createStore({
   mutations: {
     changerUserRagnar(state){
       state.users[1].name = 'beloube'
+      
     }
   },
   actions: {
