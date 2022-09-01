@@ -1,7 +1,16 @@
 <template>
-
+  <NotifBar/>
   <router-view/>
 </template>
+
+<script>
+import NotifBar from './components/NotifBar.vue';
+export default {
+    setup() {
+    },
+    components: { NotifBar }
+}
+</script>
 
 
 <style lang="scss">

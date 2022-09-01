@@ -6,7 +6,8 @@ export default createStore({
     users: [
       {id: 0, name: 'lapin'},
       {id: 1, name: 'ragnar'}
-    ]
+    ],
+    notifDisplay: false
   },
   getters: {
     getMavariable(state){
@@ -18,11 +19,17 @@ export default createStore({
     // getters avec parametres - l'id est recu du template
     getUserAvecParametre: (state) => (id) => {
       return state.users[id].name
+    },
+    getNotif: (state) => {
+      return state.notifDisplay 
     }
   },
   mutations: {
     changerUserRagnar(state, payload){
       state.users[1].name = payload.name 
+    },
+    displayNotif(state, display){
+      state.notifDisplay = display
     }
   },
   actions: {
