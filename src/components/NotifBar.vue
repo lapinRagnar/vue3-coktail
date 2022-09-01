@@ -1,6 +1,6 @@
 <template>
   <div class="notification" v-if="getNotif">
-    <p id="notification_text">le message</p>
+    <p id="notification_text">{{ getNotifMessage }}</p>
     <span id="notification_close" @click="close">x</span>
   </div>
 </template>
@@ -12,7 +12,7 @@ import { mapGetters, mapMutations } from 'vuex';
 export default {
   name: 'NotifBar',
   computed: {
-    ...mapGetters(['getNotif'])
+    ...mapGetters(['getNotif', 'getNotifMessage'])
   },
   methods: {
     ...mapMutations(['displayNotif']),

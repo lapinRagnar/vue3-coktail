@@ -7,7 +7,8 @@ export default createStore({
       {id: 0, name: 'lapin'},
       {id: 1, name: 'ragnar'}
     ],
-    notifDisplay: false
+    notifDisplay: false,
+    notifMessage: ''
   },
   getters: {
     getMavariable(state){
@@ -22,14 +23,18 @@ export default createStore({
     },
     getNotif: (state) => {
       return state.notifDisplay 
+    },
+    getNotifMessage: (state) => {
+      return state.notifMessage
     }
   },
   mutations: {
     changerUserRagnar(state, payload){
       state.users[1].name = payload.name 
     },
-    displayNotif(state, display){
-      state.notifDisplay = display
+    displayNotif(state, payload){
+      state.notifDisplay = payload.d
+      state.notifMessage = payload.mes
     }
   },
   actions: {
